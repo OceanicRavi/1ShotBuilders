@@ -24,8 +24,6 @@ const Navbar = () => {
             <Link to="/services" className="text-gray-600 hover:text-blue-600 transition-colors">Services</Link>
             <Link to="/contact" className="text-gray-600 hover:text-blue-600 transition-colors">Contact</Link>
             <Link to="/dashboard" className="text-gray-600 hover:text-blue-600 transition-colors">Dashboard</Link>
-            {/* AI Voice Agent */}
-            <AIWidget />
           </div>
 
           {/* Mobile Menu Button */}
@@ -49,11 +47,10 @@ const Navbar = () => {
             <Link to="/services" className="block px-3 py-2 text-gray-600 hover:text-blue-600">Services</Link>
             <Link to="/contact" className="block px-3 py-2 text-gray-600 hover:text-blue-600">Contact</Link>
             <Link to="/dashboard" className="block px-3 py-2 text-gray-600 hover:text-blue-600">Dashboard</Link>
-            {/* AI Voice Agent */}
-            <AIWidget />
           </div>
         </div>
       )}
+
     </nav>
   );
 };

@@ -4,27 +4,26 @@ const AIWidget = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!customElements.get("elevenlabs-convai")) {
-      // Load the ElevenLabs widget script only once
-      const scriptId = "elevenlabs-convai-script";
-      if (!document.getElementById(scriptId)) {
-        const script = document.createElement("script");
-        script.id = scriptId;
-        script.src = "https://elevenlabs.io/convai-widget/index.js";
-        script.async = true;
-        document.body.appendChild(script);
-      }
+    // Ensure the script is loaded only once
+    const scriptId = "elevenlabs-convai-script";
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement("script");
+      script.id = scriptId;
+      script.src = "https://elevenlabs.io/convai-widget/index.js";
+      script.async = true;
+      document.body.appendChild(script);
     }
 
+    // Ensure the AI widget is loaded only once inside the container
     if (containerRef.current && !containerRef.current.querySelector("elevenlabs-convai")) {
-      // Add the ElevenLabs AI widget dynamically
       const aiElement = document.createElement("elevenlabs-convai");
       aiElement.setAttribute("agent-id", "58eoPaLbBIZYiGGUhuiq");
+      aiElement.style.position = "static"; // Ensures it does not float
       containerRef.current.appendChild(aiElement);
     }
   }, []);
 
-  return <div ref={containerRef} />;
+  return <div ref={containerRef} className="w-full flex justify-center" />;
 };
 
 export default AIWidget;

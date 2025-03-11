@@ -7,6 +7,7 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Dashboard from './pages/Dashboard';
+import AIWidget from './components/AIAgent';
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
+        <div className="fixed bottom-24 right-4 z-50">
+          <AIWidget />
+        </div>
         <Chatbot />
       </div>
     </Router>

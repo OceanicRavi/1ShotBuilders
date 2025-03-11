@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, Hammer, Phone } from 'lucide-react';
 import logo from "../../src/assets/1ShotBuilders_ReversedColors_HighRes_Sharpened.png"; 
+import AIWidget from './AIAgent';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,10 +24,8 @@ const Navbar = () => {
             <Link to="/services" className="text-gray-600 hover:text-blue-600 transition-colors">Services</Link>
             <Link to="/contact" className="text-gray-600 hover:text-blue-600 transition-colors">Contact</Link>
             <Link to="/dashboard" className="text-gray-600 hover:text-blue-600 transition-colors">Dashboard</Link>
-            <a href="tel:+1234567890" className="flex items-center space-x-1 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors">
-              <Phone className="h-4 w-4" />
-              <span>Call Us</span>
-            </a>
+            {/* AI Voice Agent */}
+            <AIWidget />
           </div>
 
           {/* Mobile Menu Button */}
@@ -50,10 +49,8 @@ const Navbar = () => {
             <Link to="/services" className="block px-3 py-2 text-gray-600 hover:text-blue-600">Services</Link>
             <Link to="/contact" className="block px-3 py-2 text-gray-600 hover:text-blue-600">Contact</Link>
             <Link to="/dashboard" className="block px-3 py-2 text-gray-600 hover:text-blue-600">Dashboard</Link>
-            <a href="tel:+1234567890" className="flex items-center space-x-1 px-3 py-2 text-blue-600">
-              <Phone className="h-4 w-4" />
-              <span>Call Us</span>
-            </a>
+            {/* AI Voice Agent */}
+            <AIWidget />
           </div>
         </div>
       )}
